@@ -33,6 +33,12 @@ fn main() {
     // let mut stdin = child.stdin.take().expect("Failed to open stdin");
     // stdin.write(b"Monsieur\n").expect("Error writing in stdin");
 
-    let ten_seconds = time::Duration::from_secs(10);
-    thread::sleep(ten_seconds);
+    match child.wait(){
+        Ok(_) => {
+            println!("Server exited succesfully")
+        }
+        Err(_) => {
+            println!("Server crashed");
+        }
+    };
 }
