@@ -3,7 +3,7 @@ use std::io::Read;
 use std::process::{Command, Stdio};
 use std::{thread, time};
 
-fn main() {
+fn process() {
     let mut child = Command::new("python3")
         .arg("pipe.py")
         .stdin(Stdio::inherit())
