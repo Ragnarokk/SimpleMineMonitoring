@@ -6,3 +6,19 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+tonic = "0.8.3"
+prost = "0.11"
+prost-types = "0.11.5"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+tokio-stream = "0.1.11"
+ringbuffer = "0.11.1"
+futures = "0.3.25"
+chrono = "0.4.23"
+
+# server binary
+[[bin]]
+    name = "server"
+    path = "src/server.rs"
+
+[build-dependencies]
+tonic-build = "0.8.3"

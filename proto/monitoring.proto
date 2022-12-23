@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package monitoring;
+
+enum Status {
+  STATUS_SUCCESS = 0;
+  STATUS_FAILED = 1;
+}
+
+service Monitoring {
+  rpc StartMinecraft(StartMinecraftRequest) returns (StartMinecraftResponse);
+  rpc ConsoleLog (ConsoleLogRequest) returns (stream ConsoleLogResponse);
+}
+
+message ConsoleLogRequest {
+  google.protobuf.Timestamp timestamp = 1;
+}
+
+message ConsoleLogResponse {
+  string log = 1;
+}
+
+message StartMinecraftRequest {
+  google.protobuf.Timestamp timestamp = 1;
+}
+
+message StartMinecraftResponse {
+  google.protobuf.Timestamp timestamp = 1;
+}
