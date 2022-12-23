@@ -1,11 +1,15 @@
 import sys, tty
+from time import sleep
 
 # fd = sys.stdin.fileno()
 # tty.setraw(fd)
 
 # a = input()
 # print(a)
-print("Hello worlds")
+
+for _ in range(500):
+    print("Hello worlds")
+    sleep(1)
 
 while(True):
     ch = sys.stdin.read(1)

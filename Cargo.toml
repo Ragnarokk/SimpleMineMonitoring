@@ -20,5 +20,10 @@ chrono = "0.4.23"
     name = "server"
     path = "src/server.rs"
 
+# test client binary
+[[bin]]
+    name = "client"
+    path = "src/client.rs"
+
 [build-dependencies]
 tonic-build = "0.8.3"
